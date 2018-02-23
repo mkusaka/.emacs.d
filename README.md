@@ -1,0 +1,6 @@
+# Installs
+
+```bash
+bin/install
+```
+
