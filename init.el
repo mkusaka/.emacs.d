@@ -1,2 +1,2 @@
 (require 'cask)
-(cask)
+(cask-initialize)
