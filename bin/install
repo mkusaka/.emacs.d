@@ -9,7 +9,7 @@ brew upgrade
 brew install emacs --with-cocoa
 mkdir -p ~/.emacs.d
 INIT_PATH = ~/.emacs.d/init.el
-touch INIT_PATH
+touch $INIT_PATH
 
 # cask
 brew install cask
@@ -21,7 +21,10 @@ cask upgrade
 ls | grep Cask || cask init
 cask install
 
-cat << EOS > INIT_PATH
+cat << EOS > $INIT_PATH
 (require 'cask)
 (cask-initialize)
 EOS
+
+# launch emacs with prev init.el
+emacs -q -l init.el
