@@ -1,10 +1,11 @@
 (source gnu)
 (source melpa)
+(source marmalade)
 
 (depends-on "ace-isearch")
 (depends-on "ace-jump-mode")
 (depends-on "anzu")
-(depends-on "auto-install")
+;; (depends-on "auto-install")
 (depends-on "bind-key")
 (depends-on "cask")
 (depends-on "dash")
@@ -35,6 +36,9 @@
 (depends-on "smex")
 (depends-on "use-package")
 (depends-on "yasnippet")
+
+;; load/inits/*
+(depends-on "init-loader")
 
 ;; theme
 (depends-on "color-theme-solarized")
@@ -72,3 +76,8 @@
 (depends-on "ruby-mode")
 (depends-on "ruby-block")
 (depends-on "ruby-end")
+(depends-on "ruby-electric")
+(depends-on "rspec-mode")
+
+;;
+(depends-on "migemo")
