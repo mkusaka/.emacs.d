@@ -60,3 +60,11 @@
 ;; ace jump mode
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
+;; open recent files when launch emacs
+;; https://www20.atwiki.jp/kobapan/pages/236.html
+(desktop-save-mode t)
+(autoload 'desktop-save "desktop" nil t)
+(autoload 'desktop-clear "desktop" nil t)
+(autoload 'desktop-load-default "desktop" nil t)
+(autoload 'desktop-remove "desktop" nil t)
