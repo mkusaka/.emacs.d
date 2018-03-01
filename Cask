@@ -26,7 +26,6 @@
 (depends-on "pallet")
 (depends-on "popwin")
 (depends-on "prodigy")
-(depends-on "projectile")
 (depends-on "rainbow-delimiters")
 (depends-on "recentf-ext")
 (depends-on "s")
@@ -58,6 +57,13 @@
 (depends-on "helm-ls-git")
 (depends-on "helm-themes")
 
+;; projectile
+(depends-on "projectile")
+
+;; helm projectile
+(depends-on "helm-projectile")
+(depends-on "helm-ag")
+
 ;; save session
 (depends-on "session")
 
@@ -80,4 +86,6 @@
 (depends-on "rspec-mode")
 
 ;;
-(depends-on "migemo")
+;; (depends-on "migemo")
+
+(depends-on "recentf-ext")

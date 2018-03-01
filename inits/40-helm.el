@@ -41,9 +41,40 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x b") 'helm-for-files)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+;; (helm-migemo-mode t)
+
+;; (defun my-helm ()
+;;    (interactive)
+;;    (helm :sources '(
+;                     helm-source-buffers-list
+;                     helm-source-recentf
+;                     helm-source-files-in-current-dir
+;                     helm-source-mac-spotlight
+;                     helm-source-locate
+;                     helm-source-file-name-history
+;                     helm-source-find-files
+;                     helm-source-buffer-not-found)
+;          :buffer "*my helm ag*"))
+
+; (global-set-key (kbd "C-x b") 'my-helm)
+
+;; (remove-hook 'kill-emacs-hook 'helm-adaptive-save-history)
+
+(setq recentf-max-saved-items 500)
+(require 'recentf-ext)
+(setq helm-for-files-preferred-list
+      '(helm-source-buffers-list
+        helm-source-recentf
+        helm-source-bookmarks
+        helm-source-file-cache
+        helm-source-files-in-current-dir
+        ;; 必要とあれば
+        helm-source-bookmark-set
+        helm-source-locate))
 
 (helm-mode 1)

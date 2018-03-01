@@ -76,4 +76,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# ignore undohist
+undohist/
 
+# ignore recentf
+recentf/
+recentf

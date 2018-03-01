@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/.zprezto/" "~/src/life.clinics.medley/medley-clinic/")

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# homebrew
+brew &>/dev/null && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap caskroom/cask
+brew upgrade
+
+# emacs
+brew install emacs --with-cocoa --with-gnutls
+mkdir -p ~/.emacs.d
+INIT_PATH=~/.emacs.d/init.el
+touch $INIT_PATH
+
+# cask
+brew install cask
+PROFILE_PATH=~/.bash_profile
+echo PATH=$PATH:~/.cask/bin >> $PROFILE_PATH
+source $PROFILE_PATH
+cask upgrade
+ls | grep Cask || cask init
+cask install
+
+cat << EOS > $INIT_PATH
+(require 'cask)
+(cask-initialize)
+EOS
+
+# launch emacs with prev init.el
+emacs -q -l init.el
